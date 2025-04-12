@@ -24,7 +24,7 @@ netflix.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
         chrome.tabs.sendMessage(tabs[0].id, {action: "netflix"}, (async response => {
             if (chrome.runtime.lastError) {
-                status.innerHTML = "This is not netflix!";
+                statusHeader.innerHTML = "This is not netflix!";
             }else{
                 if(response.episode && response.progress){
                     statusHeader.innerHTML = `Current Title: ${response.title} \n Current Episode: ${response.episode}`;
@@ -37,18 +37,16 @@ netflix.addEventListener("click", () => {
                     output.removeAttribute("hidden")
                     output.innerHTML = result; 
                 }else if(response.progress){
-                    statusHeader.innerHTML = `Current Title: ${response.title} \n No Episode Found`;
+                    statusHeader.innerHTML = `Current Title: ${response.title} \n Progress: ${response.progress}`;
                     let result = await callGemini(`summarize ${response.title} up till ${response.progress} keep it to 100 words`);
                     output.removeAttribute("hidden")
                     output.innerHTML = result;
                 }else if(response.title){
-                    statusHeader.innerHTML = `Current Title: ${response.title}\n Could not find episode or progress!`;
+                    statusHeader.innerHTML = `Current Title: ${response.title}\n No Current Episode or Progress!`;
                     let result = await callGemini(`summarize ${response.title}, keep it to 100 words`);
                     output.removeAttribute("hidden")
                     output.innerHTML = result;
 
-                }else{
-                    statusHeader.innerHTML = `Not on a valid page!`;
                 }
             }
             
