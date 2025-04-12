@@ -10,12 +10,13 @@ h1 {
     font-size: 3em;
 }
 
-h3{
+h3 {
     font-size: 1.65em;
+    white-space: pre-wrap;
 }
 
 body {
-    width: 25em;
+    width: 30em;
     max-height: 60em;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
