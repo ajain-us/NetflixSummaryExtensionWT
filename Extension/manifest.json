@@ -1,0 +1,15 @@
+{
+    "name": "Hello Extensions",
+    "description": "This extension gets some data from netflix!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["scripting", "activeTab"],
+    "action": {
+      "default_popup": "popup/hello.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://www.google.com/*", "https://www.netflix.com/*"],
+        "js": ["scripts/netflix.js"]
+    }]
+  }
