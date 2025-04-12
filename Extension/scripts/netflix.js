@@ -8,11 +8,11 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse)=> {
             sendResponse({message: "Not Valid"});
         }else{
             if (episode){
-                sendResponse({title: title.replace(" - Netflix"), episode: episode.getAttribute("aria-label")});
+                sendResponse({title: title.replace(" - Netflix",""), episode: episode.getAttribute("aria-label")});
             }else if(progress_bar && !episodesPresent){
-                sendResponse({title:title.replace(" - Netflix"), progress: progress_bar.textContent})
+                sendResponse({title:title.replace(" - Netflix",""), progress: progress_bar.textContent})
             }else{
-                sendResponse({title: title.replace(" - Netflix")});
+                sendResponse({title: title.replace(" - Netflix", "")});
             }
         }
         
