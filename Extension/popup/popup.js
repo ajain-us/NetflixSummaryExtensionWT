@@ -28,17 +28,17 @@ netflix.addEventListener("click", () => {
                 statusHeader.innerHTML = "This is not netflix!";
             }else{
                 if(response.episode && response.progress){
-                    statusHeader.innerHTML = `Current Summarizing: ${response.title} \n Current Episode: ${response.episode}`;
+                    statusHeader.innerHTML = `Currently Summarizing: ${response.title} \n Current Episode: ${response.episode}`;
                     let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, keep it to 100 words`);
                     output.innerHTML = result;
                     output.removeAttribute("hidden")
                 }else if(response.episode){
-                    statusHeader.innerHTML = `Current Summarizing: ${response.title}\n Current Episode: ${response.episode}`;
+                    statusHeader.innerHTML = `Currently Summarizing: ${response.title}\n Current Episode: ${response.episode}`;
                     let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, keep it to 100 words`);
                     output.removeAttribute("hidden")
                     output.innerHTML = result; 
                 }else if(response.progress){
-                    statusHeader.innerHTML = `Current Summarizing: ${response.title} \n Progress: ${response.progress}`;
+                    statusHeader.innerHTML = `Currently Summarizing: ${response.title} \n Progress: ${response.progress}`;
                     let result = await callGemini(`summarize ${response.title} up till ${response.progress} keep it to 100 words`);
                     output.removeAttribute("hidden")
                     output.innerHTML = result;
