@@ -8,9 +8,15 @@ netflix.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
         chrome.tabs.sendMessage(tabs[0].id, {action: "netflix"}, (response => {
             if (chrome.runtime.lastError) {
-                output.innerHTML = "No content script found special!";
+                output.innerHTML = "This is not netflix!";
             }else{
-                output.innerHTML = `Title: ${response.title}, Episode: ${response.episode}`;
+                if(response.episode){
+                    output.innerHTML = `Title: ${response.title}, Episode: ${response.episode}`;
+                }else if(response.progress){
+                    output.innerHTML = `Title: ${response.title}, Progress: ${response.progress}`;
+                }else{
+                    output.innerHTML = `Title: ${response.title}`;
+                }
             }
             
         }));
