@@ -9,7 +9,7 @@
       "default_icon": "icon.png"
     },
     "content_scripts": [{
-        "matches": ["https://www.google.com/*", "https://www.netflix.com/*"],
+        "matches": ["https://www.netflix.com/*"],
         "js": ["scripts/netflix.js"]
     }]
   }

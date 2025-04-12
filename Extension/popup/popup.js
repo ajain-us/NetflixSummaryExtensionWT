@@ -1,14 +1,16 @@
-const testButton = document.getElementById("getData");
 const output = document.getElementById("output")
+const netflixButton = document.getElementById("netflix");
 output.innerHTML = "working!"
 
-testButton.addEventListener("click", () => {
+
+
+netflix.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
-        chrome.tabs.sendMessage(tabs[0].id, {action: "getData"}, (response => {
+        chrome.tabs.sendMessage(tabs[0].id, {action: "netflix"}, (response => {
             if (chrome.runtime.lastError) {
-                output.innerHTML = "No content script found.";
+                output.innerHTML = "No content script found special!";
             }else{
-                output.innerHTML = response.message
+                output.innerHTML = `Title: ${response.title}, Episode: ${response.episode}`;
             }
             
         }));
