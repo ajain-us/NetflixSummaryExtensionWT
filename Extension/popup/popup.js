@@ -63,7 +63,7 @@ reviewButton.addEventListener("click", () => {
             }else{
                 if(response.title){
                     statusHeader.innerHTML = `Currently Reviewing: ${response.title}`;
-                    let result = await callGemini(`give some reviews of ${response.title}, keep it to 100 words, be very critical on adult shows and go easy on children shows, give it a star rating at the end out of 5 and no markdown please`);
+                    let result = await callGemini(`give a review of ${response.title}, keep it to 100 words, be very honest on adult shows and go easy on children shows, give it a star rating at the end out of 5 and no markdown please`);
                     output.removeAttribute("hidden")
                     output.innerHTML = result;
                 }else{
