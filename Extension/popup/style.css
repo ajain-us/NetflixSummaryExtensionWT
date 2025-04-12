@@ -17,10 +17,12 @@ h3 {
 
 body {
     width: 30em;
+    height: fit-content;
     max-height: 60em;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    
 }
 
 button {

@@ -44,7 +44,7 @@ netflix.addEventListener("click", () => {
                     output.innerHTML = result;
                 }else if(response.title){
                     statusHeader.innerHTML = `Current Summarizing: ${response.title}\n No Current Episode or Progress!`;
-                    let result = await callGemini(`give some reviews of ${response.title}, keep it to 100 words`);
+                    let result = await callGemini(`Summarize ${response.title}, keep it to 100 words`);
                     output.removeAttribute("hidden")
                     output.innerHTML = result;
 
