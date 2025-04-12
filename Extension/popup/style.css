@@ -6,15 +6,18 @@ html {
 h1 {
     color: red;
     margin: auto;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 body {
     width: 25em;
     max-height: 60em;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
-button{
+button {
     margin: 0.25em;
     width: 150px;
     height: 45px;
@@ -24,7 +27,7 @@ button{
     font-weight: bold;
 }
 
-p{
+p {
     border-radius: 5px;
     background-color: rgba(100, 100, 100, .5);
     padding: 3px;
