@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse)=> {
             }else if(progress_bar){
                 sendResponse({title:title.split("-")[0], progress: progress_bar.textContent})
             }else{
-                
+                sendResponse({title: title.split("-")[0]});
             }
         }
         
