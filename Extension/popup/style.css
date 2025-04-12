@@ -12,6 +12,11 @@ body {
     width: 25em;
     max-height: 60em;
     padding-bottom: 2em;
+    text-align: center;
+}
+
+button{
+    margin: 1em;
 }
 
 div {

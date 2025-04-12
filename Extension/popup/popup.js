@@ -27,7 +27,7 @@ netflix.addEventListener("click", () => {
             }else{
                 if(response.episode && response.progress){
                     output.innerHTML = "Thinking!"
-                    let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, doing a sentence per episode.`);
+                    let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, doing a sentence per episode. `);
                     output.innerHTML = result;
                 }else if(response.episode){
                     let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, keep it to 100 words`);
