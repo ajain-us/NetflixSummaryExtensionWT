@@ -7,6 +7,11 @@ h1 {
     color: red;
     margin: auto;
     font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+}
+
+h3{
+    font-size: 1.65em;
 }
 
 body {
