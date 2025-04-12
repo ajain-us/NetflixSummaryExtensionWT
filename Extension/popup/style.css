@@ -11,15 +11,20 @@ h1 {
 body {
     width: 25em;
     max-height: 60em;
-    padding-bottom: 2em;
     text-align: center;
 }
 
 button{
-    margin: 1em;
+    margin: 0.25em;
+    width: 150px;
+    height: 45px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
 }
 
-div {
+p{
     border-radius: 5px;
     background-color: rgba(100, 100, 100, .5);
     padding: 3px;

@@ -1,6 +1,7 @@
 const output = document.getElementById("output")
 const netflixButton = document.getElementById("netflix");
-output.innerHTML = "working!"
+const statusHeader = document.getElementById("status");
+
 
 async function callGemini(promptText) {
     const response = await fetch(
@@ -23,20 +24,29 @@ netflix.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs)=>{
         chrome.tabs.sendMessage(tabs[0].id, {action: "netflix"}, (async response => {
             if (chrome.runtime.lastError) {
-                output.innerHTML = "This is not netflix!";
+                status.innerHTML = "This is not netflix!";
             }else{
                 if(response.episode && response.progress){
-                    output.innerHTML = "Thinking!"
-                    let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, doing a sentence per episode. `);
-                    output.innerHTML = result;
-                }else if(response.episode){
+                    statusHeader.innerHTML = `Current Title: ${response.title}`;
                     let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, keep it to 100 words`);
+                    output.innerHTML = result;
+                    output.removeAttribute("hidden")
+                }else if(response.episode){
+                    statusHeader.innerHTML = `Current Title: ${response.title}`;
+                    let result = await callGemini(`summarize ${response.title} up until episode ${response.episode}, keep it to 100 words`);
+                    output.removeAttribute("hidden")
                     output.innerHTML = result; 
                 }else if(response.progress){
+                    statusHeader.innerHTML = `Current Title: ${response.title}`;
                     let result = await callGemini(`summarize ${response.title} up until ${response.progress}, keep it to 100 words`);
+                    output.removeAttribute("hidden")
                     output.innerHTML = result;
+                }else if(response.title){
+                    statusHeader.innerHTML = `Current Title: ${response.title}\n Could not find episode or progress!`;
+                    let result = await callGemini(`summarize ${response.title}, keep it to 100 words`);
+
                 }else{
-                    output.innerHTML = `Title: ${response.title}`;
+                    statusHeader.innerHTML = `Not on a valid page!`;
                 }
             }
             

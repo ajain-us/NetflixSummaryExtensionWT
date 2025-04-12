@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse)=> {
         const progress_bar = document.querySelector("span[class='summary']");
         const title = document.title;
         if (title.includes("Home") || title.includes("TV Shows") || title.includes("Movies") || title === "Netflix"){
-            sendResponse({title: "Please select a TV show or Movie Page!"});
+            sendResponse({message: "Not Valid"});
         }else{
             if(episode && progress_bar){
                 sendResponse({title: title.split("-")[0], episode: episode.getAttribute("aria-label"), progress: progress_bar.textContent});
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse)=> {
             }else if(progress_bar){
                 sendResponse({title:title.split("-")[0], progress: progress_bar.textContent})
             }else{
-                sendResponse({title:title})
+                
             }
         }
         
