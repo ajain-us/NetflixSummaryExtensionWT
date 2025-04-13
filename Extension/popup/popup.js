@@ -25,7 +25,7 @@ netflix.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "netflix"}, (async response => {
             if (chrome.runtime.lastError) {
-                statusHeader.innerHTML = "This is not netflix!";
+                statusHeader.innerHTML = "This is not Netflix!";
             } else {
                 if (response.episode && response.progress) {
                     statusHeader.innerHTML = `Currently Summarizing: ${response.title} \n Current Episode: ${response.episode}`;
@@ -59,7 +59,7 @@ reviewButton.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, {action: "netflix"}, (async response => {
             if (chrome.runtime.lastError) {
-                statusHeader.innerHTML = "This is not netflix!";
+                statusHeader.innerHTML = "This is not Netflix!";
             } else {
                 if (response.title) {
                     statusHeader.innerHTML = `Currently Reviewing: ${response.title}`;
