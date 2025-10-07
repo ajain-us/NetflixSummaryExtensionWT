@@ -2,7 +2,7 @@
 This project is an extension for the Chrome web browser. It works when you are on Netflix in Google Chrome. This will NOT work for any app versions of Netflix.
 
 ## Functionality
-The "Summary" button will only summarize what has been viewed on the current account and will not spoil any future episodes or seasons. For movies, it will summarize up to the timestamp. If no progress has been made in the selected show or movie, a general summary will be generated spoiler free.  
+The "Summary" button will only summarize what has been viewed on the current account and will not spoil any future episodes or seasons. For movies, it will summarize up to the current timestamp. If no progress has been made in the selected show or movie, a general summary will be generated spoiler free.  
   
 The "Review" button will generate a review of the overall show/movie ending it with a rating out of 5.
 
