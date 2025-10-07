@@ -2,11 +2,24 @@ const output = document.getElementById("output");
 const netflixButton = document.getElementById("netflix");
 const statusHeader = document.getElementById("status");
 const reviewButton = document.getElementById("review");
-
+const enterButton = document.getElementById("enter");
+const setup = document.getElementById("setup");
+const main = document.getElementById("main");
+const api_enter = document.getElementById("api-key");
+let api = undefined;
+chrome.storage.local.get('GeminiKey').then((data) => {
+   api = data.GeminiKey;
+   console.log(api);
+   if (api){
+        main.removeAttribute("hidden");
+    }else{
+        setup.removeAttribute("hidden");
+    }
+});
 
 async function callGemini(promptText) {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${api}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -19,7 +32,35 @@ async function callGemini(promptText) {
     const data = await response.json();
     console.log(data);
     return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+}
+
+
+async function testGemini(key) {
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${key}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: "Hello" }] }]
+        })
+      }
+    );
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const data = await response.json();
+    return true;
+  } catch (error) {
+    return false;
   }
+}
+
+
+
 
 netflix.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
@@ -70,4 +111,20 @@ reviewButton.addEventListener("click", () => {
             }
         }));
     });
+});
+
+enterButton.addEventListener("click", async () =>{
+     try {
+        const isValid = await testGemini(api_enter.value);
+        if (isValid) {
+            await chrome.storage.local.set({ "GeminiKey": api_enter.value });
+            setup.setAttribute("hidden", "");
+            main.removeAttribute("hidden");
+            console.log("Done");
+        } else {
+            console.log("Enter a valid API key");
+        }
+    } catch (err) {
+        console.error("Error validating key:", err);
+    }
 });

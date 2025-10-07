@@ -7,14 +7,25 @@
   </head>
 
   <body>
-    <h1>Welcome</h1>
+    <div id="setup" hidden>
+      <h1>Welcome</h1>
+      <a href="https://github.com/ajain-us/NetflixSummaryExtensionWT" target="_blank" rel="noopener noreferrer">tutorial</a> <br>
+      <input type="text" placeholder="Gemini API key" id="api-key">
+      
+      <button id="enter">Enter</button>
+    </div>
 
-    <pre><h3 id="status"> Please open a show or movie.</h3></pre>
 
-    <button id="netflix">Summarize</button> <button id="review">Review</button>
-    <p id="output" hidden></p>
+    <div id="main" hidden>
+      <h1>Welcome</h1>
+      <pre><h3 id="status"> Please open a show or movie.</h3></pre>
 
-    <script src="apikey.js" defer> </script>
+      <button id="netflix">Summarize</button> <button id="review">Review</button>
+      <p id="output" hidden></p>
+    </div>
+
+
+
     <script src="popup.js" defer></script>
   </body>
 </html>
