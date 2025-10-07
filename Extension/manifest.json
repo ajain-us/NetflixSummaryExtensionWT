@@ -1,6 +1,6 @@
 {
     "name": "Summ",
-    "description": "This extension summarizes and reviews Netflix shows and movies! If you are part way through a movie or show, it will only summarize what you have already watched.",
+    "description": "This extension summarizes and reviews Netflix shows and movies. It will only summarize what you have already watched!",
     "version": "1.0",
     "manifest_version": 3,
     "permissions": ["scripting", "activeTab", "storage"],
