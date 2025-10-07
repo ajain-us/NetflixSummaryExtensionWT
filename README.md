@@ -1,5 +1,6 @@
 ## About
 This project is an extension for the Chrome web browser. It works when you are on Netflix in Google Chrome. This will NOT work for any app versions of Netflix.  
+  
 The purpose of this extension is to be refreshed on a previously watched show/movie or help determine whether or not to watch somehting new.
 
 ## Functionality
