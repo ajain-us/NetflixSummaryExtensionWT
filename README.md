@@ -1,7 +1,7 @@
 ## About
 This project is an extension for the Chrome web browser. It works when you are on Netflix in Google Chrome. This will NOT work for any app versions of Netflix.  
   
-The purpose of this extension is to be refreshed on a previously watched show/movie or help determine whether or not to watch somehting new.
+The purpose of this extension is to be refreshed on a previously watched show/movie or help determine whether or not to watch something new.
 
 ## Functionality
 The "Summary" button will only summarize what has been viewed on the current account and will not spoil any future episodes or seasons. For movies, it will summarize up to the current timestamp. If no progress has been made in the selected show or movie, a general summary will be generated.  
@@ -19,7 +19,7 @@ When you first load into the extension, it will ask you to enter a Gemini API ke
 - From there, click create project and name the project "NSEE".
 - After naming the project, please select it from the drop-down menu and press "Create Key" in the bottom right.
 - After creating the key, please press the "copy api key" button.
-- Then paste this api key in the field named "Gemini API key" and click enter!
+- Then paste this API key in the field named "Gemini API key" and click enter!
 
 If you are confused, please follow this YouTube tutorial: (will be added later).
 
