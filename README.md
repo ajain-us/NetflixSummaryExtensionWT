@@ -1,7 +1,8 @@
 ## About
-This project is an extension for Chrome. It works when you are on netflix in Google Chrome. The menu allows you to generate a summary of what the current show is about or a review based on what is online.
+This project is an extension for Chrome. It works when you are on Netflix in Google Chrome. The menu allows you to generate a summary of what the current show is about or a review based the consensus online.
 
 ## Downloading
+By following the intructions below, you will generate a key that allows ability to externally call Google's AI, Gemini. Following these steps will ensure that you will not be billed for the use of your key.
 When you first load into the extension, it will ask you to enter a Gemini API key. This can be generated at https://aistudio.google.com/app/api-keys. 
 
 - After you login, please press "Create API key" found in the top right of the webpage.
@@ -15,4 +16,4 @@ When you first load into the extension, it will ask you to enter a Gemini API ke
 If you are confused, please follow this youtube tutorial: (will be added later).
 
 ## Usage
-To use this extension, select a TV show or movie within Netflix that you would like information about. Then simply select the extension from the Chrome extension selector. It will open a popup window that has two buttons, Summary and Review. From there, your request gets generated and displayed.
+To use this extension, select a TV show or movie within Netflix that you would like information about. Then, simply select the extension from the Chrome extension selector. It will open a popup window that has two buttons, Summary and Review. From there, your request gets generated and displayed.
