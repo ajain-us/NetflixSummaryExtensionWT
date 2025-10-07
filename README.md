@@ -1,5 +1,10 @@
 ## About
-This project is an extension for the Chrome web browser. It works when you are on Netflix in Google Chrome. This will NOT work for any app versions of Netflix. The menu allows you to generate a summary of what the current show is about or a review based the consensus online.
+This project is an extension for the Chrome web browser. It works when you are on Netflix in Google Chrome. This will NOT work for any app versions of Netflix.
+
+## Functionality
+The "Summary" button will only summarize what has been viewed on the current account and will not spoil any future episodes or seasons. For movies, it will summarize up to the timestamp. If no progress has been made in the selected show or movie, a general summary will be generated spoiler free.  
+  
+The "Review" button will generate a review of the overall show/movie ending it with a rating out of 5.
 
 ## Downloading
 By following the intructions below, you will generate a key that gives the ability to externally call Google's AI, Gemini. Following these steps will ensure that you will not be billed for the use of your key.  
