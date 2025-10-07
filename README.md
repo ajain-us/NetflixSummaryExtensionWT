@@ -3,6 +3,7 @@ This project is an extension for the Chrome web browser. It works when you are o
 
 ## Downloading
 By following the intructions below, you will generate a key that gives the ability to externally call Google's AI, Gemini. Following these steps will ensure that you will not be billed for the use of your key.  
+  
 When you first load into the extension, it will ask you to enter a Gemini API key. This can be generated at: https://aistudio.google.com/app/api-keys 
 
 - After you login, please press "Create API key" found in the top right of the webpage.
