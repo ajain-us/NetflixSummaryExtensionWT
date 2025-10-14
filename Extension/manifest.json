@@ -3,7 +3,7 @@
     "description": "This extension summarizes and reviews Netflix shows and movies. It will only summarize what you have already watched!",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": ["scripting", "activeTab", "storage"],
+    "permissions": ["storage"],
     "action": {
       "default_popup": "popup/hello.html",
       "default_icon": "icon.png"

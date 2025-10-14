@@ -1,4 +1,4 @@
-Effective Date: 10/7/2025
+Effective Date: 10/13/2025
 
 This Chrome extension, _Summ_, values your privacy.
 We do not collect, transmit, or share any personal information with external servers.
@@ -26,8 +26,6 @@ Your interactions with that API are subject to Google’s Privacy Policy.
 ## Permissions Used
 
 - storage: to securely store your API key locally.
-- activeTab: to detect if you are currently on a Netflix page.
-- scripting: to retrieve episode information for summarization.
 - Host permission (https://www.netflix.com/*): to read limited page details such as show title and episode information.
   
 These permissions are used only to provide the core user-facing functionality and not for analytics or advertising.
