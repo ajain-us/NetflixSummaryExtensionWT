@@ -19,7 +19,7 @@ chrome.storage.local.get('GeminiKey').then((data) => {
 
 async function callGemini(promptText) {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${api}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${api}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ async function callGemini(promptText) {
 async function testGemini(key) {
   try {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${key}`,
+      `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${key}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
